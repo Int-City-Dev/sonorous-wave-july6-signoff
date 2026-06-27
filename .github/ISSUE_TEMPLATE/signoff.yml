@@ -1,5 +1,5 @@
 name: July 6 email sign-off
-description: Sonorous Wave Week 1 email confirmations
+description: Confirm accuracy items before Mon Jun 29 blast (copy stays as written)
 title: "[Jul 6 Sign-off] "
 labels:
   - signoff
@@ -7,82 +7,114 @@ body:
   - type: markdown
     attributes:
       value: |
-        **Live Music Monday · Mon Jul 6 · $15 GA in emails** (not $10 early bird)
+        **Live Music Monday · Mon Jul 6 · Event Masterz**
+        Four emails (E1–E4) · Sends Mon Jun 29 → Wed Jul 1 → Fri Jul 3 → Mon Jul 6 PM
+        [Partiful](https://partiful.com/e/xAn7gI2ifjCLIVoI22Pt)
+
+        Your copy stays as written — we only need answers where email, flyer, or Partiful don't match.
 
   - type: dropdown
     id: ga_price
     attributes:
-      label: "$15 GA — confirmed?"
+      label: "GA price in all four emails"
+      description: "Emails updated from 'from $10' to $15 GA because Partiful standard tier + flyer = $15. ~1 $10 early bird left on Partiful."
       options:
-        - "Yes — $15 GA is correct"
-        - "No — different wording (see notes)"
+        - "Yes — $15 GA in all emails is correct"
+        - "No — different wording (explain in notes)"
     validations:
       required: true
 
   - type: dropdown
     id: countdown
     attributes:
-      label: "1. Wed countdown (4 vs 5 days out)"
+      label: "1 — Wed E2 says '4 days out' but Wed Jul 1 → Mon Jul 6 = 5 days"
+      description: "Subject + body say '4 days out.' Keep as-is, change to 5, or move send to Thu Jul 2?"
       options:
-        - "Keep 4 days out"
+        - "Keep 4 days out as written"
         - "Change to 5 days out"
         - "Move Wed send to Thu Jul 2"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: door_type
+    attributes:
+      label: "2 — E3 says tickets 'go up at the door' — is door higher than $15 advance?"
+      description: "If door is also $15, we should soften urgency copy before Fri send."
+      options:
+        - "Door is higher than $15 — keep urgency copy"
+        - "Door is also $15 — soften or remove door-price language"
     validations:
       required: true
 
   - type: input
     id: door_price
     attributes:
-      label: "2. Door price ($)"
-      placeholder: "20 or same as advance ($15)"
+      label: "Door price ($) — if higher than $15"
+      placeholder: "e.g. 20 — or N/A"
+
+  - type: dropdown
+    id: compete_signup
+    attributes:
+      label: "3 — Faceoff signup: bio → Solo.to → Partiful OK?"
+      description: "Emails say @sonorous.wave bio, $35 enter, $200 prize. Send direct URL if bio isn't the path."
+      options:
+        - "Bio path is correct (Instagram → Solo.to → Partiful)"
+        - "Use a different URL (paste below)"
     validations:
       required: true
 
   - type: input
-    id: compete_signup
+    id: compete_url
     attributes:
-      label: "3. Faceoff signup (bio OK or URL)"
-    validations:
-      required: true
+      label: "Direct compete URL (if not bio)"
+      placeholder: "https://..."
 
   - type: dropdown
     id: second_place
     attributes:
-      label: "4. Include $100 2nd place in email?"
+      label: "4 — Flyer shows $100 2nd place; emails only mention $200 grand prize"
       options:
-        - "No"
-        - "Yes"
+        - "Intentional — keep emails as-is"
+        - "Add 2nd place to email copy (wording in notes)"
     validations:
       required: true
 
-  - type: input
+  - type: dropdown
     id: food_copy
     attributes:
-      label: "5. Food copy"
+      label: "5 — Food: generic 'full bar + food on site' or name vendors?"
+      description: "Partiful lists Cinnamama's as dessert vendor."
+      options:
+        - "Generic — full bar + food on site is fine"
+        - "Name specific vendor(s) — see notes"
     validations:
       required: true
 
   - type: dropdown
     id: show_time
     attributes:
-      label: "6. Show time"
+      label: "6 — Flyer: show 8:08pm. Emails: doors 7:30 only."
       options:
-        - "Doors only"
-        - "Add 8:08pm"
+        - "Doors 7:30pm only — no show time"
+        - "Add show time 8:08pm"
+        - "Different time — see notes"
     validations:
       required: true
 
   - type: input
     id: band_name
     attributes:
-      label: "7. Band name spelling"
+      label: "7 — Band name (emails: Back 2 The Feature · Partiful: Back 2 The Feature Live Band)"
+      value: "Back 2 The Feature"
     validations:
       required: true
 
-  - type: input
+  - type: textarea
     id: subjects
     attributes:
-      label: "8. Subjects (E1-A, E2-A, ...)"
+      label: "8 — Subject line picks (E1-A/B/C through E4-A/B/C)"
+      description: "Defaults: E1-A Mondays just leveled up · E2-A 4 days out · E3-A This Monday · E4-A Tonight"
       value: "E1-A, E2-A, E3-A, E4-A"
     validations:
       required: true
@@ -90,15 +122,23 @@ body:
   - type: dropdown
     id: early_bird
     attributes:
-      label: "9. $10 early bird on Partiful"
+      label: "9 — $10 early bird still on Partiful (~1 left). Email no longer mentions $10."
       options:
-        - "Leave"
-        - "Remove"
-        - "Restock"
+        - "Leave early bird on Partiful — email stays $15 GA"
+        - "Remove or hide early bird on Partiful"
+        - "Restock early bird and revisit email copy"
     validations:
       required: true
 
   - type: textarea
     id: notes
     attributes:
-      label: Notes
+      label: Notes (2nd place wording, custom subjects, etc.)
+
+  - type: input
+    id: submitter
+    attributes:
+      label: Your name
+      placeholder: Ahmad / Sonorous Wave
+    validations:
+      required: true

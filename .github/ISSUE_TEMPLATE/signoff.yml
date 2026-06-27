@@ -1,0 +1,104 @@
+name: July 6 email sign-off
+description: Sonorous Wave Week 1 email confirmations
+title: "[Jul 6 Sign-off] "
+labels:
+  - signoff
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Live Music Monday · Mon Jul 6 · $15 GA in emails** (not $10 early bird)
+
+  - type: dropdown
+    id: ga_price
+    attributes:
+      label: "$15 GA — confirmed?"
+      options:
+        - "Yes — $15 GA is correct"
+        - "No — different wording (see notes)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: countdown
+    attributes:
+      label: "1. Wed countdown (4 vs 5 days out)"
+      options:
+        - "Keep 4 days out"
+        - "Change to 5 days out"
+        - "Move Wed send to Thu Jul 2"
+    validations:
+      required: true
+
+  - type: input
+    id: door_price
+    attributes:
+      label: "2. Door price ($)"
+      placeholder: "20 or same as advance ($15)"
+    validations:
+      required: true
+
+  - type: input
+    id: compete_signup
+    attributes:
+      label: "3. Faceoff signup (bio OK or URL)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: second_place
+    attributes:
+      label: "4. Include $100 2nd place in email?"
+      options:
+        - "No"
+        - "Yes"
+    validations:
+      required: true
+
+  - type: input
+    id: food_copy
+    attributes:
+      label: "5. Food copy"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: show_time
+    attributes:
+      label: "6. Show time"
+      options:
+        - "Doors only"
+        - "Add 8:08pm"
+    validations:
+      required: true
+
+  - type: input
+    id: band_name
+    attributes:
+      label: "7. Band name spelling"
+    validations:
+      required: true
+
+  - type: input
+    id: subjects
+    attributes:
+      label: "8. Subjects (E1-A, E2-A, ...)"
+      value: "E1-A, E2-A, E3-A, E4-A"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: early_bird
+    attributes:
+      label: "9. $10 early bird on Partiful"
+      options:
+        - "Leave"
+        - "Remove"
+        - "Restock"
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes

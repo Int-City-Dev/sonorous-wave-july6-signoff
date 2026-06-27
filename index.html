@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sonorous Wave — July 6 Email Sign-Off</title>
+  <style>
+    :root {
+      --bg: #0c0617; --panel: #160a2b; --card: #1f1140; --border: #2e1d52;
+      --accent: #6600ff; --text: #e7defb; --muted: #9b88d4; --ok: #4ade80;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg); color: var(--text); line-height: 1.5; min-height: 100vh;
+    }
+    .wrap { max-width: 640px; margin: 0 auto; padding: 28px 20px 48px; }
+    h1 { font-size: 1.45rem; margin: 0 0 6px; font-weight: 700; }
+    .sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 20px; }
+    .callout {
+      background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+      padding: 14px 16px; font-size: 0.88rem; margin-bottom: 22px;
+    }
+    .callout strong { color: #fff; }
+    fieldset {
+      border: 1px solid var(--border); border-radius: 10px;
+      background: var(--panel); margin: 0 0 14px; padding: 14px 16px 16px;
+    }
+    legend { font-weight: 600; font-size: 0.92rem; padding: 0 4px; color: #fff; }
+    label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 6px; }
+    input[type=text], textarea, select {
+      width: 100%; padding: 10px 12px; border-radius: 8px;
+      border: 1px solid var(--border); background: var(--bg); color: var(--text);
+      font: inherit; margin-bottom: 4px;
+    }
+    textarea { min-height: 72px; resize: vertical; }
+    .hint { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+    .row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+    .row label.opt {
+      display: flex; align-items: center; gap: 8px; background: var(--card);
+      border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px;
+      font-size: 0.85rem; color: var(--text); cursor: pointer; margin: 0;
+    }
+    .row label.opt:has(input:checked) { border-color: var(--accent); background: #241350; }
+    .row input { width: auto; margin: 0; accent-color: var(--accent); }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    button { font: inherit; font-weight: 600; cursor: pointer; border: none; border-radius: 9px; padding: 12px 20px; }
+    .primary { background: var(--accent); color: #fff; flex: 1; min-width: 200px; }
+    .secondary { background: transparent; color: var(--muted); border: 1px solid var(--border); }
+    .footer { margin-top: 24px; font-size: 0.78rem; color: var(--muted); }
+    .footer a { color: #cdb4ff; }
+    #toast {
+      display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+      background: #1f1140; border: 1px solid var(--ok); color: var(--ok);
+      padding: 10px 18px; border-radius: 8px; font-size: 0.85rem; z-index: 9;
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Sonorous Wave — July 6 sign-off</h1>
+  <p class="sub">Week 1 emails · Mon Jun 29 → Mon Jul 6 · Event Masterz</p>
+  <div class="callout">
+    <strong>Your copy stays as written.</strong> Email GA price is <strong>$15</strong>
+    (Partiful standard tier + flyer) — not the sold-out $10 early bird.
+  </div>
+  <form id="form">
+    <fieldset>
+      <legend>$15 GA — OK?</legend>
+      <div class="row">
+        <label class="opt"><input type="radio" name="ga_price" value="Yes — $15 GA is correct" required checked> Yes, $15 is correct</label>
+        <label class="opt"><input type="radio" name="ga_price" value="No — different wording (see notes)"> No — see notes</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>1. Wed countdown (E2)</legend>
+      <select name="countdown" required>
+        <option value="Keep 4 days out">Keep "4 days out" as written</option>
+        <option value="Change to 5 days out">Change to "5 days out"</option>
+        <option value="Move send to Thu Jul 2">Move Wed send to Thu Jul 2</option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <legend>2. Door price</legend>
+      <input type="text" name="door_price" placeholder="e.g. 20 — or same as advance ($15)" required>
+      <p class="hint">E3 says tickets "go up at the door."</p>
+    </fieldset>
+    <fieldset>
+      <legend>3. Faceoff signup</legend>
+      <input type="text" name="compete_signup" placeholder="bio OK / https://..." required>
+    </fieldset>
+    <fieldset>
+      <legend>4. $100 2nd place on flyer</legend>
+      <div class="row">
+        <label class="opt"><input type="radio" name="second_place" value="No — emails stay as-is" required checked> No — keep as-is</label>
+        <label class="opt"><input type="radio" name="second_place" value="Yes — add 2nd place"> Yes — add 2nd place</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>5. Food copy</legend>
+      <input type="text" name="food_copy" placeholder="generic OK / Cinnamama's" required>
+    </fieldset>
+    <fieldset>
+      <legend>6. Show time</legend>
+      <select name="show_time" required>
+        <option value="Doors 7:30 only">Doors 7:30 only</option>
+        <option value="Add show 8:08pm">Add show 8:08pm</option>
+        <option value="Other — see notes">Other — see notes</option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <legend>7. Band name</legend>
+      <input type="text" name="band_name" placeholder="Back 2 The Feature / Live Band" required>
+    </fieldset>
+    <fieldset>
+      <legend>8. Subject lines</legend>
+      <input type="text" name="subjects" value="E1-A, E2-A, E3-A, E4-A" required>
+    </fieldset>
+    <fieldset>
+      <legend>9. $10 early bird on Partiful</legend>
+      <select name="early_bird" required>
+        <option value="Leave on Partiful">Leave on Partiful (email stays $15)</option>
+        <option value="Remove or hide">Remove or hide early bird</option>
+        <option value="Restock and revisit copy">Restock early bird & revisit email copy</option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <legend>Notes</legend>
+      <textarea name="notes" placeholder="Optional"></textarea>
+    </fieldset>
+    <fieldset>
+      <legend>Your name</legend>
+      <input type="text" name="submitter" placeholder="Ahmad / Sonorous Wave" required>
+    </fieldset>
+    <div class="actions">
+      <button type="submit" class="primary">Submit → GitHub</button>
+      <button type="button" class="secondary" id="copyBtn">Copy answers</button>
+      <button type="button" class="secondary" id="dlBtn">Download JSON</button>
+    </div>
+  </form>
+  <p class="footer">
+    Submissions create a GitHub issue (sign in required).
+    <a href="https://github.com/Int-City-Dev/sonorous-wave-july6-signoff/issues/new?template=signoff.yml">Or use GitHub form</a>.
+  </p>
+</div>
+<div id="toast"></div>
+<script>
+  const REPO = 'Int-City-Dev/sonorous-wave-july6-signoff';
+  function val(form, name) {
+    const el = form.elements[name];
+    if (el.type === 'radio') return form.querySelector(`input[name="${name}"]:checked`)?.value || '';
+    return (el.value || '').trim();
+  }
+  function buildBody(form) {
+    const s = val(form, 'submitter');
+    return [
+      '## Sonorous Wave — July 6 email sign-off', '',
+      `**Submitted by:** ${s}`, `**Date:** ${new Date().toISOString().slice(0, 10)}`, '',
+      '| # | Item | Answer |', '|---|------|--------|',
+      `| GA | $15 GA | ${val(form, 'ga_price')} |`,
+      `| 1 | Countdown | ${val(form, 'countdown')} |`,
+      `| 2 | Door price | ${val(form, 'door_price')} |`,
+      `| 3 | Faceoff signup | ${val(form, 'compete_signup')} |`,
+      `| 4 | 2nd place | ${val(form, 'second_place')} |`,
+      `| 5 | Food | ${val(form, 'food_copy')} |`,
+      `| 6 | Show time | ${val(form, 'show_time')} |`,
+      `| 7 | Band name | ${val(form, 'band_name')} |`,
+      `| 8 | Subjects | ${val(form, 'subjects')} |`,
+      `| 9 | Early bird | ${val(form, 'early_bird')} |`, '',
+      val(form, 'notes') ? `### Notes\n\n${val(form, 'notes')}\n` : '',
+    ].join('\n');
+  }
+  function buildPayload(form) {
+    return { submitted_at: new Date().toISOString(), submitter: val(form, 'submitter'),
+      ga_price: val(form, 'ga_price'), countdown: val(form, 'countdown'),
+      door_price: val(form, 'door_price'), compete_signup: val(form, 'compete_signup'),
+      second_place: val(form, 'second_place'), food_copy: val(form, 'food_copy'),
+      show_time: val(form, 'show_time'), band_name: val(form, 'band_name'),
+      subjects: val(form, 'subjects'), early_bird: val(form, 'early_bird'), notes: val(form, 'notes') };
+  }
+  function toast(msg) {
+    const t = document.getElementById('toast'); t.textContent = msg; t.style.display = 'block';
+    setTimeout(() => t.style.display = 'none', 2800);
+  }
+  document.getElementById('form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const url = `https://github.com/${REPO}/issues/new?` + new URLSearchParams({
+      title: `[Jul 6 Sign-off] ${val(form, 'submitter')}`, body: buildBody(form), labels: 'signoff',
+    });
+    window.open(url, '_blank', 'noopener');
+    toast('GitHub issue opened — click Submit there');
+  });
+  document.getElementById('copyBtn').onclick = () =>
+    navigator.clipboard.writeText(buildBody(document.getElementById('form'))).then(() => toast('Copied'));
+  document.getElementById('dlBtn').onclick = () => {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([JSON.stringify(buildPayload(document.getElementById('form')), null, 2)]));
+    a.download = 'july6-signoff.json'; a.click();
+  };
+</script>
+</body>
+</html>

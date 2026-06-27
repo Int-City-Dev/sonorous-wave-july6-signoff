@@ -23,8 +23,14 @@
       background: var(--card); border: 1px solid var(--border); border-radius: 10px;
       padding: 14px 16px; font-size: 0.88rem; margin-bottom: 18px;
     }
-    .intro ul { margin: 8px 0 0; padding-left: 1.2rem; }
-    .intro li { margin-bottom: 4px; }
+    .intro ol { margin: 10px 0 0; padding-left: 1.2rem; }
+    .intro li { margin-bottom: 5px; }
+    .intro .lead { font-size: 0.95rem; color: var(--text); margin: 0 0 10px; line-height: 1.5; }
+    .how-to {
+      background: #1a0d35; border: 1px solid var(--border); border-radius: 10px;
+      padding: 12px 14px; font-size: 0.84rem; margin-bottom: 18px; color: var(--muted);
+    }
+    .how-to strong { color: #fff; }
     .callout strong { color: #fff; }
     fieldset {
       border: 1px solid var(--border); border-radius: 10px;
@@ -62,8 +68,11 @@
     button { font: inherit; font-weight: 600; cursor: pointer; border: none; border-radius: 9px; padding: 12px 20px; }
     .primary { background: var(--accent); color: #fff; flex: 1; min-width: 200px; }
     .secondary { background: transparent; color: var(--muted); border: 1px solid var(--border); }
-    .footer { margin-top: 24px; font-size: 0.78rem; color: var(--muted); }
+    .footer { margin-top: 24px; font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
     .footer a { color: #cdb4ff; }
+    .footer-alt { margin-top: 10px; font-size: 0.76rem; }
+    details.admin { margin-top: 12px; font-size: 0.76rem; color: var(--muted); }
+    details.admin summary { cursor: pointer; color: #9b88d4; }
     #toast {
       display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
       background: #1f1140; border: 1px solid var(--ok); color: var(--ok);
@@ -73,46 +82,68 @@
 </head>
 <body>
 <div class="wrap">
-  <h1>Sonorous Wave — July 6 email sign-off</h1>
-  <p class="sub">Four lifecycle emails for City Reach · Ahmad, please confirm before <strong>Mon Jun 29</strong> blast</p>
+  <h1>July 6 emails — quick check before we send</h1>
+  <p class="sub">Sonorous Wave · Live Music Monday · please reply before <strong>Monday, June 29</strong></p>
 
   <div class="intro">
-    <strong>What this is:</strong> Your copy stays as you wrote it. We only need answers where the emails, flyer, or Partiful don't fully match — so nothing surprises ticket buyers at checkout.
+    <p class="lead">Hi Ahmad — your four promo emails are ready to go out. <strong>We did not rewrite your copy.</strong> We only need you to confirm a few details where the emails, your flyer, and Partiful don't quite match — so nobody gets surprised at checkout.</p>
+    <p class="lead" style="margin-bottom:12px">Most options are already selected. Skim each section, change anything that's wrong, then tap <strong>Send my answers</strong> at the bottom. Takes about 5 minutes.</p>
+    <strong>The event</strong>
     <ul>
-      <li><strong>Event:</strong> Live Music Monday · Mon Jul 6 · doors 7:30pm · Event Masterz</li>
-      <li><strong>Tickets:</strong> <a href="https://partiful.com/e/xAn7gI2ifjCLIVoI22Pt" style="color:#cdb4ff">partiful.com/e/xAn7gI2ifjCLIVoI22Pt</a></li>
-      <li><strong>Sends:</strong> Mon Jun 29 (E1) → Wed Jul 1 (E2) → Fri Jul 3 (E3) → Mon Jul 6 ~4–5pm (E4)</li>
-      <li><strong>Competition:</strong> Vocalist Faceoff · $35 to enter · $200 grand prize</li>
+      <li><strong>What:</strong> Live Music Monday + Vocalist Faceoff</li>
+      <li><strong>When:</strong> Monday, July 6 · doors 7:30pm · Event Masterz</li>
+      <li><strong>Tickets:</strong> <a href="https://partiful.com/e/xAn7gI2ifjCLIVoI22Pt" style="color:#cdb4ff">Open on Partiful</a></li>
+      <li><strong>Compete:</strong> $35 to enter · $200 grand prize</li>
     </ul>
+    <strong style="display:block;margin-top:14px">When the four emails go out</strong>
+    <ul>
+      <li><strong>Mon Jun 29</strong> — announcement (first email)</li>
+      <li><strong>Wed Jul 1</strong> — reminder</li>
+      <li><strong>Fri Jul 3</strong> — weekend push / urgency</li>
+      <li><strong>Mon Jul 6 ~4–5pm</strong> — day-of "tonight" email</li>
+    </ul>
+  </div>
+
+  <div class="how-to">
+    <strong>How to send your answers back</strong><br>
+    1. Fill in your name below<br>
+    2. Tap <strong>Send my answers</strong> at the bottom<br>
+    3. A confirmation page opens — review and tap Submit there<br><br>
+    <strong>Easier?</strong> Text or email Anthony your answers instead. A one-page PDF is fine too — no form required.
   </div>
 
   <form id="form">
 
     <fieldset>
-      <legend>GA ticket price in all four emails</legend>
+      <legend>Your name</legend>
+      <input type="text" name="submitter" placeholder="Ahmad" required autofocus>
+    </fieldset>
+
+    <fieldset>
+      <legend>Ticket price in all four emails ($15 general admission)</legend>
       <div class="context">
-        <strong>What changed:</strong> Original copy said <em>"from $10"</em>. We updated every email to <em>"$15 GA"</em> because Partiful's standard tier is $15 and the flyer shows $15.<br><br>
-        <strong>Partiful right now:</strong> ~1 ticket left at $10 early bird, then $15 general admission (what almost everyone pays).<br><br>
-        <strong>Why it matters:</strong> If email says "from $10" but checkout shows $15, people feel misled. We're asking you to confirm $15 is the right price to advertise to the full list.
+        <strong>What changed:</strong> Your original copy said <em>"from $10."</em> We changed it to <em>"$15 general admission"</em> because that's what almost everyone pays on Partiful now, and your flyer also shows $15.<br><br>
+        <strong>On Partiful today:</strong> about 1 ticket left at $10 early bird, then $15 for everyone else.<br><br>
+        <strong>Why we're asking:</strong> If the email says "$10" but checkout shows $15, people feel misled. We want your OK before we send to the full list.
       </div>
       <div class="row">
         <label class="opt">
           <input type="radio" name="ga_price" value="Yes — $15 GA in all emails is correct" required checked>
-          <span>Yes — advertise <strong>$15 GA</strong> in all four emails (recommended)</span>
+          <span>Yes — say <strong>$15 general admission</strong> in all four emails (recommended)</span>
         </label>
         <label class="opt">
           <input type="radio" name="ga_price" value="No — different wording (see notes)">
-          <span>No — I want different wording<span class="opt-desc">Explain in Notes below (e.g. "$15 advance only")</span></span>
+          <span>No — I want different wording<span class="opt-desc">Explain in Notes at the bottom (e.g. "$15 advance only")</span></span>
         </label>
       </div>
     </fieldset>
 
     <fieldset>
-      <legend>1 — Wed email says "4 days out" (E2, sends Wed Jul 1)</legend>
+      <legend>1 — Wed reminder says "4 days out" (goes out Wed Jul 1)</legend>
       <div class="context">
-        <strong>What the email says:</strong> Subject and hero: <em>"4 days out."</em> Body: <em>"Four days from Monday, we're back at Event Masterz."</em><br><br>
-        <strong>The math:</strong> Wed Jul 1 → Mon Jul 6 is <strong>5 calendar days</strong>, not 4.<br><br>
-        <strong>Why it matters:</strong> Small thing, but some readers notice. Your call on whether to fix the copy, or move the send so "4 days" is accurate.
+        <strong>What the email says:</strong> Subject line and header: <em>"4 days out."</em> Body: <em>"Four days from Monday, we're back at Event Masterz."</em><br><br>
+        <strong>The dates:</strong> Wednesday July 1 → Monday July 6 is actually <strong>5 days</strong>, not 4.<br><br>
+        <strong>Why we're asking:</strong> Some people notice the math. Your call — keep your wording, fix it to 5 days, or move the send to Thursday.
       </div>
       <div class="row">
         <label class="opt"><input type="radio" name="countdown" value="Keep 4 days out as written" required checked>
@@ -125,28 +156,28 @@
     </fieldset>
 
     <fieldset>
-      <legend>2 — Door price vs advance (E3, sends Fri Jul 3)</legend>
+      <legend>2 — Fri email says tickets "go up at the door" (goes out Fri Jul 3)</legend>
       <div class="context">
         <strong>What the email says:</strong> <em>"Tickets go up at the door"</em> and <em>"Grab your ticket before the door price."</em><br><br>
-        <strong>Advance price in email:</strong> $15 GA.<br><br>
-        <strong>Why it matters:</strong> If door is also $15, that urgency line isn't true and we should soften or remove it before Fri's send.
+        <strong>Advance price in email:</strong> $15.<br><br>
+        <strong>Why we're asking:</strong> If the door price is also $15, that line isn't true — we should soften or remove it before Friday's send.
       </div>
       <div class="row">
-        <label class="opt"><input type="radio" name="door_type" value="Door is higher than $15 — keep urgency copy" required>
-          <span>Door is <strong>higher than $15</strong> — keep "go up at the door" copy</span></label>
+        <label class="opt"><input type="radio" name="door_type" value="Door is higher than $15 — keep urgency copy" required checked>
+          <span>Door is <strong>higher than $15</strong> — keep "go up at the door" wording</span></label>
         <label class="opt"><input type="radio" name="door_type" value="Door is also $15 — soften or remove door-price language">
           <span>Door is <strong>also $15</strong> — soften or remove "go up at the door" language</span></label>
       </div>
-      <label for="door_price">If door is higher, what is the door price?</label>
-      <input type="text" id="door_price" name="door_price" placeholder="e.g. $20 — or write N/A if door is also $15">
+      <label for="door_price">If door is higher than $15, what's the door price?</label>
+      <input type="text" id="door_price" name="door_price" placeholder="e.g. $20 — leave blank if door is also $15">
     </fieldset>
 
     <fieldset>
-      <legend>3 — How singers sign up for Vocalist Faceoff (E1 + E2)</legend>
+      <legend>3 — How singers sign up for Vocalist Faceoff (Mon + Wed emails)</legend>
       <div class="context">
-        <strong>What the email says:</strong> Sign up via <em>@sonorous.wave bio</em> · <strong>$35 to enter</strong> · <strong>$200 grand prize</strong>.<br><br>
-        <strong>What we found:</strong> Instagram bio → Solo.to → Partiful (competition tier on the same Jul 6 event). No separate compete URL on Solo.to.<br><br>
-        <strong>Why it matters:</strong> If bio isn't where you want email readers to go, send us a direct link and we can add it without changing your voice.
+        <strong>What the email says:</strong> Sign up through <em>@sonorous.wave bio</em> · <strong>$35 to enter</strong> · <strong>$200 grand prize</strong>.<br><br>
+        <strong>What we checked:</strong> Instagram bio → Solo.to link → Partiful (competition ticket on the same July 6 event). We didn't find a separate compete link on Solo.to.<br><br>
+        <strong>Why we're asking:</strong> If bio isn't where you want people to go, send us a direct link and we'll add it.
       </div>
       <div class="row">
         <label class="opt"><input type="radio" name="compete_signup" value="Bio path is correct (Instagram → Solo.to → Partiful)" required checked>
@@ -163,7 +194,7 @@
       <div class="context">
         <strong>Flyer shows:</strong> $200 grand prize + <strong>$100 2nd place</strong>.<br><br>
         <strong>Emails mention:</strong> $200 grand prize only — no 2nd place.<br><br>
-        <strong>Why it matters:</strong> Confirm this omission is intentional, or send us one line to add.
+        <strong>Why we're asking:</strong> Just confirming you meant to leave 2nd place off the emails, or if you want us to add it.
       </div>
       <div class="row">
         <label class="opt"><input type="radio" name="second_place" value="Intentional — keep emails as-is (grand prize only)" required checked>
@@ -178,7 +209,7 @@
       <div class="context">
         <strong>What the email says:</strong> <em>"Full bar + food on site."</em><br><br>
         <strong>Partiful lists:</strong> Cinnamama's as dessert vendor.<br><br>
-        <strong>Why it matters:</strong> Generic is fine, or we can name vendors if you want more specific copy.
+        <strong>Why we're asking:</strong> Generic is fine — or tell us exactly how you want vendors named.
       </div>
       <div class="row">
         <label class="opt"><input type="radio" name="food_copy" value="Generic — full bar + food on site is fine" required checked>
@@ -195,7 +226,7 @@
       <div class="context">
         <strong>Flyer shows:</strong> Doors 7:30pm · <strong>Show 8:08pm</strong>.<br><br>
         <strong>Emails show:</strong> Doors 7:30pm only — no show time.<br><br>
-        <strong>Why it matters:</strong> Add show time if you want people to know when the act starts, not just when doors open.
+        <strong>Why we're asking:</strong> Only if you want people to know when the show starts, not just when doors open.
       </div>
       <div class="row">
         <label class="opt"><input type="radio" name="show_time" value="Doors 7:30pm only — no show time in email" required checked>
@@ -212,7 +243,7 @@
       <div class="context">
         <strong>Emails use:</strong> <em>"Back 2 The Feature"</em><br><br>
         <strong>Partiful title uses:</strong> <em>"Back 2 The Feature Live Band"</em><br><br>
-        <strong>Why it matters:</strong> Pick one spelling so email and Partiful match when people search.
+        <strong>Why we're asking:</strong> Pick one spelling so email and Partiful match.
       </div>
       <label for="band_name">Exact name to use in emails</label>
       <input type="text" id="band_name" name="band_name" value="Back 2 The Feature" required>
@@ -220,55 +251,55 @@
     </fieldset>
 
     <fieldset>
-      <legend>8 — Subject lines (one pick per send)</legend>
+      <legend>8 — Email subject lines (what people see in their inbox)</legend>
       <div class="context">
-        We'll set these in City Reach at schedule time. <strong>{{first_name}}</strong> becomes the recipient's name, or "friend" if we don't have it.<br><br>
-        Pick one subject per email below — each menu shows the full line. First option is our default.
+        These are the subject lines at the top of each email. Pick one per send — the first option in each menu is what we'll use unless you change it.<br><br>
+        Some options include <strong>[first name]</strong> — that automatically becomes the person's name (or "friend" if we don't have it). Example: <em>"July 6 is almost here, Marcus"</em>
       </div>
       <div class="subject-picks">
         <div class="pick">
-          <label for="subject_e1">Mon Jun 29 · first email (E1)</label>
+          <label for="subject_e1">Mon Jun 29 · announcement</label>
           <select id="subject_e1" name="subject_e1">
             <option value="Mondays just leveled up 🎶">Mondays just leveled up 🎶</option>
             <option value="Charlotte, your Monday night is back">Charlotte, your Monday night is back</option>
-            <option value="{{first_name}}, we built something new for July 6">{{first_name}}, we built something new for July 6</option>
+            <option value="{{first_name}}, we built something new for July 6">[first name], we built something new for July 6</option>
           </select>
         </div>
         <div class="pick">
-          <label for="subject_e2">Wed Jul 1 · reminder (E2)</label>
+          <label for="subject_e2">Wed Jul 1 · reminder</label>
           <select id="subject_e2" name="subject_e2">
             <option value="4 days out: Live Music Monday 🎶">4 days out: Live Music Monday 🎶</option>
-            <option value="July 6 is almost here, {{first_name}}">July 6 is almost here, {{first_name}}</option>
+            <option value="July 6 is almost here, {{first_name}}">July 6 is almost here, [first name]</option>
             <option value="Your Monday night — this weekend">Your Monday night — this weekend</option>
           </select>
         </div>
         <div class="pick">
-          <label for="subject_e3">Fri Jul 3 · urgency (E3)</label>
+          <label for="subject_e3">Fri Jul 3 · urgency</label>
           <select id="subject_e3" name="subject_e3">
             <option value="This Monday. Don't sleep on it.">This Monday. Don't sleep on it.</option>
-            <option value="{{first_name}}, seats are going for Monday">{{first_name}}, seats are going for Monday</option>
+            <option value="{{first_name}}, seats are going for Monday">[first name], seats are going for Monday</option>
             <option value="3 days out: Live Music Monday">3 days out: Live Music Monday</option>
           </select>
         </div>
         <div class="pick">
-          <label for="subject_e4">Mon Jul 6 · day-of (E4)</label>
+          <label for="subject_e4">Mon Jul 6 · day-of</label>
           <select id="subject_e4" name="subject_e4">
             <option value="Tonight. 🎶">Tonight. 🎶</option>
-            <option value="{{first_name}}, we're on tonight">{{first_name}}, we're on tonight</option>
+            <option value="{{first_name}}, we're on tonight">[first name], we're on tonight</option>
             <option value="Doors open soon — Live Music Monday">Doors open soon — Live Music Monday</option>
           </select>
         </div>
       </div>
-      <label for="subjects_custom">Or write your own (optional)</label>
-      <input type="text" id="subjects_custom" name="subjects_custom" placeholder="Only if you want custom lines instead of the menus above">
+      <label for="subjects_custom">Want completely custom subject lines instead? (optional)</label>
+      <input type="text" id="subjects_custom" name="subjects_custom" placeholder="Write your own — one line per email">
     </fieldset>
 
     <fieldset>
-      <legend>9 — $10 early bird tier still on Partiful</legend>
+      <legend>9 — $10 early bird still listed on Partiful</legend>
       <div class="context">
-        <strong>Partiful:</strong> ~1 ticket left at $10 early bird, then $15 GA.<br><br>
-        <strong>Emails:</strong> No longer advertise $10 — all say $15 GA (see first question).<br><br>
-        <strong>Why it matters:</strong> Early bird can stay for organic/social traffic, but list email won't mention it unless you restock and want copy reverted.
+        <strong>On Partiful:</strong> about 1 ticket left at $10 early bird, then $15 for everyone else.<br><br>
+        <strong>In the emails:</strong> we no longer mention $10 — all four say $15 (see first question).<br><br>
+        <strong>Why we're asking:</strong> You can leave early bird for social/organic traffic, remove it so checkout always matches the email, or restock early bird and change the email copy.
       </div>
       <div class="row">
         <label class="opt"><input type="radio" name="early_bird" value="Leave early bird on Partiful — email stays $15 GA" required checked>
@@ -281,27 +312,27 @@
     </fieldset>
 
     <fieldset>
-      <legend>Anything else?</legend>
-      <textarea name="notes" placeholder="Optional — wording for 2nd place, custom subject lines, door price notes, etc."></textarea>
-    </fieldset>
-
-    <fieldset>
-      <legend>Your name</legend>
-      <input type="text" name="submitter" placeholder="Ahmad / Sonorous Wave" required>
+      <legend>Anything else we should know?</legend>
+      <textarea name="notes" placeholder="Optional — e.g. wording for 2nd place prize, custom subject lines, door price details"></textarea>
     </fieldset>
 
     <div class="actions">
-      <button type="submit" class="primary">Submit → GitHub</button>
-      <button type="button" class="secondary" id="copyBtn">Copy answers</button>
-      <button type="button" class="secondary" id="dlBtn">Download JSON</button>
+      <button type="submit" class="primary">Send my answers</button>
     </div>
   </form>
 
   <p class="footer">
-    Submit opens a GitHub issue (GitHub login required). PDF with full detail:
-    ask Anthony for <em>sonorous-wave-july6-client-signoff-2026-06-27.pdf</em>.
-    · <a href="https://github.com/Int-City-Dev/sonorous-wave-july6-signoff/issues/new?template=signoff.yml">GitHub form alternative</a>
+    After you tap <strong>Send my answers</strong>, a confirmation page opens — review everything and tap Submit there to finish.<br>
+    Prefer not to use the form? Text or email Anthony your answers, or fill in the PDF he sent.
   </p>
+  <details class="admin">
+    <summary>Other ways to submit (for Anthony)</summary>
+    <p class="footer-alt">
+      <a href="#" id="copyLink">Copy answers to clipboard</a> ·
+      <a href="#" id="dlBtn">Download JSON</a> ·
+      <a href="https://github.com/Int-City-Dev/sonorous-wave-july6-signoff/issues/new?template=signoff.yml">GitHub form</a>
+    </p>
+  </details>
 </div>
 <div id="toast"></div>
 <script>
@@ -331,10 +362,10 @@
     const custom = val(form, 'subjects_custom');
     if (custom) return custom;
     return [
-      `E1 Mon Jun 29: ${val(form, 'subject_e1')}`,
-      `E2 Wed Jul 1: ${val(form, 'subject_e2')}`,
-      `E3 Fri Jul 3: ${val(form, 'subject_e3')}`,
-      `E4 Mon Jul 6: ${val(form, 'subject_e4')}`,
+      `Mon Jun 29 announcement: ${val(form, 'subject_e1')}`,
+      `Wed Jul 1 reminder: ${val(form, 'subject_e2')}`,
+      `Fri Jul 3 urgency: ${val(form, 'subject_e3')}`,
+      `Mon Jul 6 day-of: ${val(form, 'subject_e4')}`,
     ].join(' · ');
   }
   function buildBody(form) {
@@ -382,11 +413,14 @@
       title: `[Jul 6 Sign-off] ${val(form, 'submitter')}`, body: buildBody(form), labels: 'signoff',
     });
     window.open(url, '_blank', 'noopener');
-    toast('GitHub issue opened — click Submit there');
+    toast('Confirmation page opened — tap Submit there to finish');
   });
-  document.getElementById('copyBtn').onclick = () =>
+  document.getElementById('copyLink').addEventListener('click', e => {
+    e.preventDefault();
     navigator.clipboard.writeText(buildBody(document.getElementById('form'))).then(() => toast('Copied'));
-  document.getElementById('dlBtn').onclick = () => {
+  });
+  document.getElementById('dlBtn').addEventListener('click', e => {
+    e.preventDefault();
     const a = document.createElement('a');
     a.href = URL.createObjectURL(new Blob([JSON.stringify(buildPayload(document.getElementById('form')), null, 2)]));
     a.download = 'july6-signoff.json'; a.click();

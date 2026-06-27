@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sonorous Wave — July 6 Email Sign-Off</title>
+  <title>Sonorous Wave — July 6 Sign-Off</title>
   <style>
     :root {
       --bg: #0c0617; --panel: #160a2b; --card: #1f1140; --border: #2e1d52;
@@ -13,60 +13,56 @@
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      background: var(--bg); color: var(--text); line-height: 1.55; min-height: 100vh;
+      background: var(--bg); color: var(--text); line-height: 1.5; min-height: 100vh;
     }
-    .wrap { max-width: 680px; margin: 0 auto; padding: 28px 20px 48px; }
-    h1 { font-size: 1.45rem; margin: 0 0 6px; font-weight: 700; }
-    h2 { font-size: 1rem; margin: 24px 0 10px; color: #fff; font-weight: 600; }
-    .sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 20px; }
-    .intro, .callout {
+    .wrap { max-width: 520px; margin: 0 auto; padding: 28px 20px 48px; }
+    h1 { font-size: 1.35rem; margin: 0 0 8px; font-weight: 700; }
+    .sub { color: var(--muted); font-size: 0.88rem; margin-bottom: 18px; }
+    .defaults {
       background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-      padding: 14px 16px; font-size: 0.88rem; margin-bottom: 18px;
+      padding: 14px 16px; font-size: 0.82rem; color: var(--muted); margin-bottom: 20px;
     }
-    .intro ul { margin: 8px 0 0; padding-left: 1.2rem; }
-    .intro li { margin-bottom: 4px; }
-    .callout strong { color: #fff; }
+    .defaults strong { color: #fff; display: block; margin-bottom: 8px; font-size: 0.88rem; }
+    .defaults ul { margin: 0; padding-left: 1.1rem; }
+    .defaults li { margin-bottom: 3px; }
     fieldset {
-      border: 1px solid var(--border); border-radius: 10px;
-      background: var(--panel); margin: 0 0 16px; padding: 14px 16px 16px;
+      border: none; background: var(--panel); border-radius: 10px;
+      margin: 0 0 14px; padding: 14px 16px;
     }
-    legend { font-weight: 600; font-size: 0.95rem; padding: 0 4px; color: #fff; line-height: 1.35; }
-    .context {
-      background: var(--card); border-left: 3px solid var(--accent);
-      padding: 10px 12px; margin: 0 0 12px; font-size: 0.82rem; color: var(--muted);
-      border-radius: 0 8px 8px 0;
+    legend { font-weight: 600; font-size: 0.92rem; padding: 0; color: #fff; margin-bottom: 10px; }
+    label.field { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 6px; }
+    input[type=text], textarea {
+      width: 100%; padding: 11px 12px; border-radius: 8px;
+      border: 1px solid var(--border); background: var(--bg); color: var(--text); font: inherit;
     }
-    .context strong { color: var(--text); font-weight: 600; }
-    .context em { color: #cdb4ff; font-style: normal; }
-    label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 6px; }
-    input[type=text], textarea, select {
-      width: 100%; padding: 10px 12px; border-radius: 8px;
-      border: 1px solid var(--border); background: var(--bg); color: var(--text);
-      font: inherit; margin-bottom: 4px;
+    textarea { min-height: 80px; resize: vertical; margin-top: 10px; }
+    .changes-title {
+      font-size: 0.88rem; color: var(--muted); margin: 0 0 10px;
     }
-    textarea { min-height: 72px; resize: vertical; }
-    .hint { font-size: 0.78rem; color: var(--muted); margin-top: 6px; }
-    .row { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
-    .row label.opt {
-      display: flex; align-items: flex-start; gap: 10px; background: var(--card);
-      border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px;
-      font-size: 0.85rem; color: var(--text); cursor: pointer; margin: 0;
+    .change {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px;
+      padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.86rem;
     }
-    .row label.opt:has(input:checked) { border-color: var(--accent); background: #241350; }
-    .row input { width: auto; margin-top: 3px; flex-shrink: 0; accent-color: var(--accent); }
-    .opt-desc { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
-    .subjects-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; margin: 10px 0; }
-    .subjects-table th, .subjects-table td {
-      border: 1px solid var(--border); padding: 8px; text-align: left; vertical-align: top;
+    .change:last-child { border-bottom: none; padding-bottom: 0; }
+    .change label.chk {
+      display: flex; align-items: flex-start; gap: 10px; cursor: pointer;
+      flex: 1; min-width: 200px; color: var(--text); margin: 0;
     }
-    .subjects-table th { background: var(--card); color: #fff; font-weight: 600; }
-    .subjects-table td { color: var(--muted); }
-    .subjects-table td:first-child { color: var(--text); white-space: nowrap; }
-    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-    button { font: inherit; font-weight: 600; cursor: pointer; border: none; border-radius: 9px; padding: 12px 20px; }
-    .primary { background: var(--accent); color: #fff; flex: 1; min-width: 200px; }
-    .secondary { background: transparent; color: var(--muted); border: 1px solid var(--border); }
-    .footer { margin-top: 24px; font-size: 0.78rem; color: var(--muted); }
+    .change label.chk input { margin-top: 3px; accent-color: var(--accent); flex-shrink: 0; }
+    .change .when { font-size: 0.78rem; color: var(--muted); display: block; margin-top: 2px; }
+    .change input[type=text], .change select {
+      flex: 1; min-width: 140px; padding: 8px 10px; border-radius: 7px;
+      border: 1px solid var(--border); background: var(--bg); color: var(--text); font: inherit;
+      display: none;
+    }
+    .change.is-on input[type=text], .change.is-on select { display: block; }
+    .change.is-on { background: #1a0d35; margin: 0 -16px; padding: 10px 16px; border-radius: 8px; border-bottom-color: transparent; }
+    .actions { margin-top: 18px; }
+    button {
+      width: 100%; font: inherit; font-weight: 600; cursor: pointer; border: none;
+      border-radius: 9px; padding: 14px 20px; background: var(--accent); color: #fff;
+    }
+    .footer { margin-top: 16px; font-size: 0.76rem; color: var(--muted); text-align: center; }
     .footer a { color: #cdb4ff; }
     #toast {
       display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
@@ -77,287 +73,216 @@
 </head>
 <body>
 <div class="wrap">
-  <h1>Sonorous Wave — July 6 email sign-off</h1>
-  <p class="sub">Four lifecycle emails for City Reach · Ahmad, please confirm before <strong>Mon Jun 29</strong> blast</p>
+  <h1>Jul 6 emails — quick sign-off</h1>
+  <p class="sub">Mon Jun 29 → Wed → Fri → Mon Jul 6 · Live Music Monday · Event Masterz<br>
+  <a href="https://partiful.com/e/xAn7gI2ifjCLIVoI22Pt" style="color:#cdb4ff">Partiful link</a></p>
 
-  <div class="intro">
-    <strong>What this is:</strong> Your copy stays as you wrote it. We only need answers where the emails, flyer, or Partiful don't fully match — so nothing surprises ticket buyers at checkout.
+  <div class="defaults">
+    <strong>If you change nothing, we send with:</strong>
     <ul>
-      <li><strong>Event:</strong> Live Music Monday · Mon Jul 6 · doors 7:30pm · Event Masterz</li>
-      <li><strong>Tickets:</strong> <a href="https://partiful.com/e/xAn7gI2ifjCLIVoI22Pt" style="color:#cdb4ff">partiful.com/e/xAn7gI2ifjCLIVoI22Pt</a></li>
-      <li><strong>Sends:</strong> Mon Jun 29 (E1) → Wed Jul 1 (E2) → Fri Jul 3 (E3) → Mon Jul 6 ~4–5pm (E4)</li>
-      <li><strong>Competition:</strong> Vocalist Faceoff · $35 to enter · $200 grand prize</li>
+      <li><strong>$15 GA</strong> in all emails (not $10 early bird)</li>
+      <li>Wed email: <strong>"4 days out"</strong></li>
+      <li>Fri email: tickets <strong>go up at the door</strong></li>
+      <li>Faceoff via <strong>@sonorous.wave bio</strong> · $35 · $200 prize</li>
+      <li>Doors <strong>7:30pm</strong> · band <strong>Back 2 The Feature</strong></li>
+      <li>Subject lines: <strong>E1–E4 option A</strong> (see PDF if you want B/C)</li>
+      <li>$10 early bird stays on Partiful only</li>
     </ul>
   </div>
 
   <form id="form">
-
-    <fieldset>
-      <legend>GA ticket price in all four emails</legend>
-      <div class="context">
-        <strong>What changed:</strong> Original copy said <em>"from $10"</em>. We updated every email to <em>"$15 GA"</em> because Partiful's standard tier is $15 and the flyer shows $15.<br><br>
-        <strong>Partiful right now:</strong> ~1 ticket left at $10 early bird, then $15 general admission (what almost everyone pays).<br><br>
-        <strong>Why it matters:</strong> If email says "from $10" but checkout shows $15, people feel misled. We're asking you to confirm $15 is the right price to advertise to the full list.
-      </div>
-      <div class="row">
-        <label class="opt">
-          <input type="radio" name="ga_price" value="Yes — $15 GA in all emails is correct" required checked>
-          <span>Yes — advertise <strong>$15 GA</strong> in all four emails (recommended)</span>
-        </label>
-        <label class="opt">
-          <input type="radio" name="ga_price" value="No — different wording (see notes)">
-          <span>No — I want different wording<span class="opt-desc">Explain in Notes below (e.g. "$15 advance only")</span></span>
-        </label>
-      </div>
-    </fieldset>
-
-    <fieldset>
-      <legend>1 — Wed email says "4 days out" (E2, sends Wed Jul 1)</legend>
-      <div class="context">
-        <strong>What the email says:</strong> Subject and hero: <em>"4 days out."</em> Body: <em>"Four days from Monday, we're back at Event Masterz."</em><br><br>
-        <strong>The math:</strong> Wed Jul 1 → Mon Jul 6 is <strong>5 calendar days</strong>, not 4.<br><br>
-        <strong>Why it matters:</strong> Small thing, but some readers notice. Your call on whether to fix the copy, or move the send so "4 days" is accurate.
-      </div>
-      <div class="row">
-        <label class="opt"><input type="radio" name="countdown" value="Keep 4 days out as written" required checked>
-          <span>Keep <strong>"4 days out"</strong> as written — wording is intentional</span></label>
-        <label class="opt"><input type="radio" name="countdown" value="Change to 5 days out">
-          <span>Change to <strong>"5 days out"</strong> in subject + body</span></label>
-        <label class="opt"><input type="radio" name="countdown" value="Move Wed send to Thu Jul 2">
-          <span>Move Wed send to <strong>Thu Jul 2</strong> so "4 days out" is accurate</span></label>
-      </div>
-    </fieldset>
-
-    <fieldset>
-      <legend>2 — Door price vs advance (E3, sends Fri Jul 3)</legend>
-      <div class="context">
-        <strong>What the email says:</strong> <em>"Tickets go up at the door"</em> and <em>"Grab your ticket before the door price."</em><br><br>
-        <strong>Advance price in email:</strong> $15 GA.<br><br>
-        <strong>Why it matters:</strong> If door is also $15, that urgency line isn't true and we should soften or remove it before Fri's send.
-      </div>
-      <div class="row">
-        <label class="opt"><input type="radio" name="door_type" value="Door is higher than $15 — keep urgency copy" required>
-          <span>Door is <strong>higher than $15</strong> — keep "go up at the door" copy</span></label>
-        <label class="opt"><input type="radio" name="door_type" value="Door is also $15 — soften or remove door-price language">
-          <span>Door is <strong>also $15</strong> — soften or remove "go up at the door" language</span></label>
-      </div>
-      <label for="door_price">If door is higher, what is the door price?</label>
-      <input type="text" id="door_price" name="door_price" placeholder="e.g. $20 — or write N/A if door is also $15">
-    </fieldset>
-
-    <fieldset>
-      <legend>3 — How singers sign up for Vocalist Faceoff (E1 + E2)</legend>
-      <div class="context">
-        <strong>What the email says:</strong> Sign up via <em>@sonorous.wave bio</em> · <strong>$35 to enter</strong> · <strong>$200 grand prize</strong>.<br><br>
-        <strong>What we found:</strong> Instagram bio → Solo.to → Partiful (competition tier on the same Jul 6 event). No separate compete URL on Solo.to.<br><br>
-        <strong>Why it matters:</strong> If bio isn't where you want email readers to go, send us a direct link and we can add it without changing your voice.
-      </div>
-      <div class="row">
-        <label class="opt"><input type="radio" name="compete_signup" value="Bio path is correct (Instagram → Solo.to → Partiful)" required checked>
-          <span><strong>Bio path is correct</strong> — Instagram → Solo.to → Partiful</span></label>
-        <label class="opt"><input type="radio" name="compete_signup" value="Use a different URL (see field below)">
-          <span><strong>Different URL</strong> — paste it below</span></label>
-      </div>
-      <label for="compete_url">Direct compete link (only if not bio)</label>
-      <input type="text" id="compete_url" name="compete_url" placeholder="https://... or leave blank if bio is correct">
-    </fieldset>
-
-    <fieldset>
-      <legend>4 — $100 second-place prize on flyer but not in email</legend>
-      <div class="context">
-        <strong>Flyer shows:</strong> $200 grand prize + <strong>$100 2nd place</strong>.<br><br>
-        <strong>Emails mention:</strong> $200 grand prize only — no 2nd place.<br><br>
-        <strong>Why it matters:</strong> Confirm this omission is intentional, or send us one line to add.
-      </div>
-      <div class="row">
-        <label class="opt"><input type="radio" name="second_place" value="Intentional — keep emails as-is (grand prize only)" required checked>
-          <span><strong>Intentional</strong> — keep emails as-is (grand prize only)</span></label>
-        <label class="opt"><input type="radio" name="second_place" value="Add 2nd place to email copy">
-          <span><strong>Add 2nd place</strong> — I'll write exact wording in Notes</span></label>
-      </div>
-    </fieldset>
-
-    <fieldset>
-      <legend>5 — Food &amp; vendor copy</legend>
-      <div class="context">
-        <strong>What the email says:</strong> <em>"Full bar + food on site."</em><br><br>
-        <strong>Partiful lists:</strong> Cinnamama's as dessert vendor.<br><br>
-        <strong>Why it matters:</strong> Generic is fine, or we can name vendors if you want more specific copy.
-      </div>
-      <div class="row">
-        <label class="opt"><input type="radio" name="food_copy" value="Generic — full bar + food on site is fine" required checked>
-          <span><strong>Generic</strong> — "full bar + food on site" is fine</span></label>
-        <label class="opt"><input type="radio" name="food_copy" value="Name specific vendor(s) — see field below">
-          <span><strong>Name vendor(s)</strong> — write exact wording below</span></label>
-      </div>
-      <label for="food_detail">Exact food copy (only if naming vendors)</label>
-      <input type="text" id="food_detail" name="food_detail" placeholder="e.g. Full bar + Cinnamama's desserts on site">
-    </fieldset>
-
-    <fieldset>
-      <legend>6 — Show time on flyer vs emails</legend>
-      <div class="context">
-        <strong>Flyer shows:</strong> Doors 7:30pm · <strong>Show 8:08pm</strong>.<br><br>
-        <strong>Emails show:</strong> Doors 7:30pm only — no show time.<br><br>
-        <strong>Why it matters:</strong> Add show time if you want people to know when the act starts, not just when doors open.
-      </div>
-      <div class="row">
-        <label class="opt"><input type="radio" name="show_time" value="Doors 7:30pm only — no show time in email" required checked>
-          <span><strong>Doors only</strong> — keep 7:30pm, no show time</span></label>
-        <label class="opt"><input type="radio" name="show_time" value="Add show time 8:08pm">
-          <span><strong>Add show time</strong> — 8:08pm (as on flyer)</span></label>
-        <label class="opt"><input type="radio" name="show_time" value="Add different show time — see notes">
-          <span><strong>Different time</strong> — specify in Notes</span></label>
-      </div>
-    </fieldset>
-
-    <fieldset>
-      <legend>7 — Band / act name spelling</legend>
-      <div class="context">
-        <strong>Emails use:</strong> <em>"Back 2 The Feature"</em><br><br>
-        <strong>Partiful title uses:</strong> <em>"Back 2 The Feature Live Band"</em><br><br>
-        <strong>Why it matters:</strong> Pick one spelling so email and Partiful match when people search.
-      </div>
-      <label for="band_name">Exact name to use in emails</label>
-      <input type="text" id="band_name" name="band_name" value="Back 2 The Feature" required>
-      <p class="hint">Change if you want "Back 2 The Feature Live Band" or something else.</p>
-    </fieldset>
-
-    <fieldset>
-      <legend>8 — Subject lines (one pick per send)</legend>
-      <div class="context">
-        We'll set these in City Reach at schedule time. <strong>{{first_name}}</strong> becomes the recipient's name, or "friend" if we don't have it.<br>
-        Reply with your picks (e.g. E1-A, E2-B, E3-A, E4-A) or paste edited subjects below.
-      </div>
-      <table class="subjects-table">
-        <thead><tr><th>Send</th><th>A (default)</th><th>B</th><th>C</th></tr></thead>
-        <tbody>
-          <tr><td>Mon Jun 29 · E1</td><td>Mondays just leveled up 🎶</td><td>Charlotte, your Monday night is back</td><td>{{first_name}}, we built something new for July 6</td></tr>
-          <tr><td>Wed Jul 1 · E2</td><td>4 days out: Live Music Monday 🎶</td><td>July 6 is almost here, {{first_name}}</td><td>Your Monday night — this weekend</td></tr>
-          <tr><td>Fri Jul 3 · E3</td><td>This Monday. Don't sleep on it.</td><td>{{first_name}}, seats are going for Monday</td><td>3 days out: Live Music Monday</td></tr>
-          <tr><td>Mon Jul 6 PM · E4</td><td>Tonight. 🎶</td><td>{{first_name}}, we're on tonight</td><td>Doors open soon — Live Music Monday</td></tr>
-        </tbody>
-      </table>
-      <label for="subjects">Your picks</label>
-      <input type="text" id="subjects" name="subjects" value="E1-A, E2-A, E3-A, E4-A" required>
-      <p class="hint">Or paste fully custom subject lines if you prefer.</p>
-    </fieldset>
-
-    <fieldset>
-      <legend>9 — $10 early bird tier still on Partiful</legend>
-      <div class="context">
-        <strong>Partiful:</strong> ~1 ticket left at $10 early bird, then $15 GA.<br><br>
-        <strong>Emails:</strong> No longer advertise $10 — all say $15 GA (see first question).<br><br>
-        <strong>Why it matters:</strong> Early bird can stay for organic/social traffic, but list email won't mention it unless you restock and want copy reverted.
-      </div>
-      <div class="row">
-        <label class="opt"><input type="radio" name="early_bird" value="Leave early bird on Partiful — email stays $15 GA" required checked>
-          <span><strong>Leave early bird</strong> on Partiful — email stays at $15 GA</span></label>
-        <label class="opt"><input type="radio" name="early_bird" value="Remove or hide early bird on Partiful">
-          <span><strong>Remove or hide</strong> early bird so checkout always matches $15 messaging</span></label>
-        <label class="opt"><input type="radio" name="early_bird" value="Restock early bird and revisit email copy">
-          <span><strong>Restock early bird</strong> and revisit email copy (not recommended for this send)</span></label>
-      </div>
-    </fieldset>
-
-    <fieldset>
-      <legend>Anything else?</legend>
-      <textarea name="notes" placeholder="Optional — wording for 2nd place, custom subject lines, door price notes, etc."></textarea>
-    </fieldset>
-
     <fieldset>
       <legend>Your name</legend>
-      <input type="text" name="submitter" placeholder="Ahmad / Sonorous Wave" required>
+      <input type="text" name="submitter" placeholder="Ahmad" required autofocus>
+    </fieldset>
+
+    <fieldset>
+      <legend>Anything wrong?</legend>
+      <p class="changes-title">Leave all unchecked = <strong style="color:#4ade80">approved as-is</strong>. Check only what needs fixing.</p>
+
+      <div class="change" data-key="ga_price">
+        <label class="chk"><input type="checkbox" name="chg_ga_price">
+          <span>GA price shouldn't be $15<span class="when">Emails say $15 · Partiful GA is $15</span></span>
+        </label>
+        <input type="text" name="ga_price" placeholder="What should it say?">
+      </div>
+
+      <div class="change" data-key="countdown">
+        <label class="chk"><input type="checkbox" name="chg_countdown">
+          <span>Fix Wed "4 days out"<span class="when">Jul 1 → Jul 6 is actually 5 days</span></span>
+        </label>
+        <select name="countdown">
+          <option value="Change to 5 days out">Change to "5 days out"</option>
+          <option value="Move send to Thu Jul 2">Move Wed send to Thu Jul 2</option>
+        </select>
+      </div>
+
+      <div class="change" data-key="door">
+        <label class="chk"><input type="checkbox" name="chg_door">
+          <span>Door is same $15 (not higher)<span class="when">Fri email says "go up at the door"</span></span>
+        </label>
+      </div>
+
+      <div class="change" data-key="door_higher">
+        <label class="chk"><input type="checkbox" name="chg_door_higher">
+          <span>Door is higher — tell us $<span class="when">Keeps urgency copy in Fri email</span></span>
+        </label>
+        <input type="text" name="door_price" placeholder="e.g. 20">
+      </div>
+
+      <div class="change" data-key="compete">
+        <label class="chk"><input type="checkbox" name="chg_compete">
+          <span>Faceoff signup isn't via bio<span class="when">Email sends people to @sonorous.wave bio</span></span>
+        </label>
+        <input type="text" name="compete_url" placeholder="Paste correct link">
+      </div>
+
+      <div class="change" data-key="second_place">
+        <label class="chk"><input type="checkbox" name="chg_second_place">
+          <span>Add $100 2nd place to email<span class="when">Flyer has it · email only says $200 grand prize</span></span>
+        </label>
+        <input type="text" name="second_place_text" placeholder="Exact wording (optional)">
+      </div>
+
+      <div class="change" data-key="food">
+        <label class="chk"><input type="checkbox" name="chg_food">
+          <span>Name food vendors<span class="when">Email says "food on site" · Partiful has Cinnamama's</span></span>
+        </label>
+        <input type="text" name="food_detail" placeholder="e.g. Cinnamama's desserts">
+      </div>
+
+      <div class="change" data-key="show_time">
+        <label class="chk"><input type="checkbox" name="chg_show_time">
+          <span>Add show time 8:08pm<span class="when">Flyer has it · emails only say doors 7:30</span></span>
+        </label>
+      </div>
+
+      <div class="change" data-key="band">
+        <label class="chk"><input type="checkbox" name="chg_band">
+          <span>Change band name<span class="when">Currently "Back 2 The Feature"</span></span>
+        </label>
+        <input type="text" name="band_name" placeholder="Exact spelling">
+      </div>
+
+      <div class="change" data-key="subjects">
+        <label class="chk"><input type="checkbox" name="chg_subjects">
+          <span>Change subject lines<span class="when">Default: E1–E4 option A — PDF has B/C</span></span>
+        </label>
+        <input type="text" name="subjects" placeholder="e.g. E1-B, E2-A, E3-C, E4-A">
+      </div>
+
+      <div class="change" data-key="early_bird">
+        <label class="chk"><input type="checkbox" name="chg_early_bird">
+          <span>Change $10 early bird on Partiful<span class="when">~1 left · email won't mention $10</span></span>
+        </label>
+        <select name="early_bird">
+          <option value="Remove or hide early bird">Remove / hide early bird</option>
+          <option value="Restock early bird and revisit email copy">Restock & change email copy</option>
+        </select>
+      </div>
+
+      <textarea name="notes" placeholder="Anything else? (optional)"></textarea>
     </fieldset>
 
     <div class="actions">
-      <button type="submit" class="primary">Submit → GitHub</button>
-      <button type="button" class="secondary" id="copyBtn">Copy answers</button>
-      <button type="button" class="secondary" id="dlBtn">Download JSON</button>
+      <button type="submit">Submit sign-off</button>
     </div>
   </form>
 
-  <p class="footer">
-    Submit opens a GitHub issue (GitHub login required). PDF with full detail:
-    ask Anthony for <em>sonorous-wave-july6-client-signoff-2026-06-27.pdf</em>.
-    · <a href="https://github.com/Int-City-Dev/sonorous-wave-july6-signoff/issues/new?template=signoff.yml">GitHub form alternative</a>
-  </p>
+  <p class="footer">Opens GitHub to finish (login required) ·
+    <a href="#" id="copyLink">copy answers instead</a></p>
 </div>
 <div id="toast"></div>
 <script>
   const REPO = 'Int-City-Dev/sonorous-wave-july6-signoff';
-  function val(form, name) {
-    const el = form.elements[name];
-    if (!el) return '';
-    if (el.type === 'radio') return form.querySelector(`input[name="${name}"]:checked`)?.value || '';
-    return (el.value || '').trim();
-  }
-  function doorAnswer(form) {
-    const t = val(form, 'door_type');
-    const p = val(form, 'door_price');
-    return p ? `${t} — $${p.replace(/^\$/, '')}` : t;
-  }
-  function competeAnswer(form) {
-    const base = val(form, 'compete_signup');
-    const url = val(form, 'compete_url');
-    return url ? `${base} — ${url}` : base;
-  }
-  function foodAnswer(form) {
-    const base = val(form, 'food_copy');
-    const d = val(form, 'food_detail');
-    return d ? `${base} — ${d}` : base;
-  }
+
+  document.querySelectorAll('.change').forEach(row => {
+    const cb = row.querySelector('input[type=checkbox]');
+    cb.addEventListener('change', () => row.classList.toggle('is-on', cb.checked));
+  });
+
+  function checked(form, name) { return form.querySelector(`input[name="${name}"]`)?.checked; }
+  function val(form, name) { return (form.elements[name]?.value || '').trim(); }
+
   function buildBody(form) {
     const s = val(form, 'submitter');
-    return [
+    const changes = [];
+    const approved = [];
+
+    if (checked(form, 'chg_ga_price')) changes.push(`GA price: ${val(form, 'ga_price') || '(see notes)'}`);
+    else approved.push('$15 GA in all emails');
+
+    if (checked(form, 'chg_countdown')) changes.push(`Wed countdown: ${val(form, 'countdown')}`);
+    else approved.push('Wed "4 days out" as written');
+
+    if (checked(form, 'chg_door')) changes.push('Door is also $15 — soften/remove "go up at door" copy');
+    else if (checked(form, 'chg_door_higher')) changes.push(`Door price: $${val(form, 'door_price').replace(/^\$/, '')}`);
+    else approved.push('Door higher than $15 — keep urgency copy');
+
+    if (checked(form, 'chg_compete')) changes.push(`Faceoff signup: ${val(form, 'compete_url') || '(see notes)'}`);
+    else approved.push('Faceoff via @sonorous.wave bio');
+
+    if (checked(form, 'chg_second_place')) changes.push(`Add 2nd place: ${val(form, 'second_place_text') || 'yes — wording in notes'}`);
+    else approved.push('Grand prize only in email (no 2nd place)');
+
+    if (checked(form, 'chg_food')) changes.push(`Food: ${val(form, 'food_detail') || '(see notes)'}`);
+    else approved.push('Generic "food on site"');
+
+    if (checked(form, 'chg_show_time')) changes.push('Add show time 8:08pm');
+    else approved.push('Doors 7:30 only');
+
+    if (checked(form, 'chg_band')) changes.push(`Band name: ${val(form, 'band_name')}`);
+    else approved.push('Back 2 The Feature');
+
+    if (checked(form, 'chg_subjects')) changes.push(`Subjects: ${val(form, 'subjects')}`);
+    else approved.push('Subject lines E1–E4 option A');
+
+    if (checked(form, 'chg_early_bird')) changes.push(`Early bird: ${val(form, 'early_bird')}`);
+    else approved.push('Leave $10 early bird on Partiful');
+
+    const lines = [
       '## Sonorous Wave — July 6 email sign-off', '',
-      `**Submitted by:** ${s}`, `**Date:** ${new Date().toISOString().slice(0, 10)}`, '',
-      '| # | Question | Answer |', '|---|----------|--------|',
-      `| GA | GA price in emails | ${val(form, 'ga_price')} |`,
-      `| 1 | Wed countdown (E2) | ${val(form, 'countdown')} |`,
-      `| 2 | Door price (E3) | ${doorAnswer(form)} |`,
-      `| 3 | Faceoff signup | ${competeAnswer(form)} |`,
-      `| 4 | 2nd place prize | ${val(form, 'second_place')} |`,
-      `| 5 | Food copy | ${foodAnswer(form)} |`,
-      `| 6 | Show time | ${val(form, 'show_time')} |`,
-      `| 7 | Band name | ${val(form, 'band_name')} |`,
-      `| 8 | Subject lines | ${val(form, 'subjects')} |`,
-      `| 9 | Early bird on Partiful | ${val(form, 'early_bird')} |`, '',
-      val(form, 'notes') ? `### Notes\n\n${val(form, 'notes')}\n` : '',
-    ].join('\n');
+      `**Submitted by:** ${s}`,
+      `**Date:** ${new Date().toISOString().slice(0, 10)}`,
+      `**Status:** ${changes.length ? 'Changes requested' : 'Approved as-is ✓'}`, '',
+    ];
+
+    if (approved.length) {
+      lines.push('### Approved (defaults)', '');
+      approved.forEach(a => lines.push(`- ${a}`));
+      lines.push('');
+    }
+    if (changes.length) {
+      lines.push('### Changes', '');
+      changes.forEach(c => lines.push(`- ${c}`));
+      lines.push('');
+    }
+    if (val(form, 'notes')) lines.push('### Notes', '', val(form, 'notes'), '');
+
+    return lines.join('\n');
   }
-  function buildPayload(form) {
-    return {
-      submitted_at: new Date().toISOString(), submitter: val(form, 'submitter'),
-      ga_price: val(form, 'ga_price'), countdown: val(form, 'countdown'),
-      door_type: val(form, 'door_type'), door_price: val(form, 'door_price'),
-      compete_signup: val(form, 'compete_signup'), compete_url: val(form, 'compete_url'),
-      second_place: val(form, 'second_place'), food_copy: val(form, 'food_copy'),
-      food_detail: val(form, 'food_detail'), show_time: val(form, 'show_time'),
-      band_name: val(form, 'band_name'), subjects: val(form, 'subjects'),
-      early_bird: val(form, 'early_bird'), notes: val(form, 'notes'),
-    };
-  }
+
   function toast(msg) {
     const t = document.getElementById('toast'); t.textContent = msg; t.style.display = 'block';
     setTimeout(() => t.style.display = 'none', 2800);
   }
-  document.getElementById('form').addEventListener('submit', (e) => {
+
+  document.getElementById('form').addEventListener('submit', e => {
     e.preventDefault();
     const form = e.target;
     const url = `https://github.com/${REPO}/issues/new?` + new URLSearchParams({
-      title: `[Jul 6 Sign-off] ${val(form, 'submitter')}`, body: buildBody(form), labels: 'signoff',
+      title: `[Jul 6 Sign-off] ${val(form, 'submitter')}`,
+      body: buildBody(form),
+      labels: 'signoff',
     });
     window.open(url, '_blank', 'noopener');
-    toast('GitHub issue opened — click Submit there');
+    toast('GitHub opened — click Submit there');
   });
-  document.getElementById('copyBtn').onclick = () =>
+
+  document.getElementById('copyLink').addEventListener('click', e => {
+    e.preventDefault();
     navigator.clipboard.writeText(buildBody(document.getElementById('form'))).then(() => toast('Copied'));
-  document.getElementById('dlBtn').onclick = () => {
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(new Blob([JSON.stringify(buildPayload(document.getElementById('form')), null, 2)]));
-    a.download = 'july6-signoff.json'; a.click();
-  };
+  });
 </script>
 </body>
 </html>

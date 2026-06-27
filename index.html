@@ -57,6 +57,25 @@
     }
     .change.is-on input[type=text], .change.is-on select { display: block; }
     .change.is-on { background: #1a0d35; margin: 0 -16px; padding: 10px 16px; border-radius: 8px; border-bottom-color: transparent; }
+    .subject-picks {
+      margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border);
+    }
+    .subject-picks summary {
+      cursor: pointer; font-size: 0.88rem; color: var(--text); font-weight: 600;
+      list-style: none; display: flex; align-items: center; gap: 8px;
+    }
+    .subject-picks summary::-webkit-details-marker { display: none; }
+    .subject-picks summary::before { content: '▸'; color: var(--muted); font-size: 0.75rem; }
+    .subject-picks[open] summary::before { content: '▾'; }
+    .subject-picks .hint { font-weight: 400; color: var(--muted); font-size: 0.78rem; }
+    .subject-picks .inner { margin-top: 12px; display: flex; flex-direction: column; gap: 12px; }
+    .pick label {
+      display: block; font-size: 0.78rem; color: var(--muted); margin-bottom: 5px;
+    }
+    .pick select {
+      width: 100%; padding: 10px 12px; border-radius: 8px;
+      border: 1px solid var(--border); background: var(--bg); color: var(--text); font: inherit;
+    }
     .actions { margin-top: 18px; }
     button {
       width: 100%; font: inherit; font-weight: 600; cursor: pointer; border: none;
@@ -85,7 +104,7 @@
       <li>Fri email: tickets <strong>go up at the door</strong></li>
       <li>Faceoff via <strong>@sonorous.wave bio</strong> · $35 · $200 prize</li>
       <li>Doors <strong>7:30pm</strong> · band <strong>Back 2 The Feature</strong></li>
-      <li>Subject lines: <strong>E1–E4 option A</strong> (see PDF if you want B/C)</li>
+      <li>Subject lines: <strong>"Mondays just leveled up 🎶"</strong> → <strong>"4 days out…"</strong> → <strong>"This Monday…"</strong> → <strong>"Tonight. 🎶"</strong></li>
       <li>$10 early bird stays on Partiful only</li>
     </ul>
   </div>
@@ -164,12 +183,47 @@
         <input type="text" name="band_name" placeholder="Exact spelling">
       </div>
 
-      <div class="change" data-key="subjects">
-        <label class="chk"><input type="checkbox" name="chg_subjects">
-          <span>Change subject lines<span class="when">Default: E1–E4 option A — PDF has B/C</span></span>
-        </label>
-        <input type="text" name="subjects" placeholder="e.g. E1-B, E2-A, E3-C, E4-A">
-      </div>
+      <details class="subject-picks">
+        <summary>Change subject lines? <span class="hint">optional — skip if defaults are fine</span></summary>
+        <div class="inner">
+          <div class="pick">
+            <label>Mon Jun 29 · first email</label>
+            <select name="subject_e1">
+              <option value="Mondays just leveled up 🎶">Mondays just leveled up 🎶</option>
+              <option value="Charlotte, your Monday night is back">Charlotte, your Monday night is back</option>
+              <option value="{{first_name}}, we built something new for July 6">{{first_name}}, we built something new for July 6</option>
+            </select>
+          </div>
+          <div class="pick">
+            <label>Wed Jul 1 · reminder</label>
+            <select name="subject_e2">
+              <option value="4 days out: Live Music Monday 🎶">4 days out: Live Music Monday 🎶</option>
+              <option value="July 6 is almost here, {{first_name}}">July 6 is almost here, {{first_name}}</option>
+              <option value="Your Monday night — this weekend">Your Monday night — this weekend</option>
+            </select>
+          </div>
+          <div class="pick">
+            <label>Fri Jul 3 · urgency</label>
+            <select name="subject_e3">
+              <option value="This Monday. Don't sleep on it.">This Monday. Don't sleep on it.</option>
+              <option value="{{first_name}}, seats are going for Monday">{{first_name}}, seats are going for Monday</option>
+              <option value="3 days out: Live Music Monday">3 days out: Live Music Monday</option>
+            </select>
+          </div>
+          <div class="pick">
+            <label>Mon Jul 6 · day-of</label>
+            <select name="subject_e4">
+              <option value="Tonight. 🎶">Tonight. 🎶</option>
+              <option value="{{first_name}}, we're on tonight">{{first_name}}, we're on tonight</option>
+              <option value="Doors open soon — Live Music Monday">Doors open soon — Live Music Monday</option>
+            </select>
+          </div>
+          <div class="pick">
+            <label>Or write your own (one per line, optional)</label>
+            <input type="text" name="subjects_custom" placeholder="Only if none of the dropdowns work">
+          </div>
+        </div>
+      </details>
 
       <div class="change" data-key="early_bird">
         <label class="chk"><input type="checkbox" name="chg_early_bird">
@@ -195,6 +249,19 @@
 <div id="toast"></div>
 <script>
   const REPO = 'Int-City-Dev/sonorous-wave-july6-signoff';
+
+  const DEFAULT_SUBJECTS = {
+    subject_e1: 'Mondays just leveled up 🎶',
+    subject_e2: '4 days out: Live Music Monday 🎶',
+    subject_e3: "This Monday. Don't sleep on it.",
+    subject_e4: 'Tonight. 🎶',
+  };
+  const SEND_LABELS = {
+    subject_e1: 'Mon Jun 29',
+    subject_e2: 'Wed Jul 1',
+    subject_e3: 'Fri Jul 3',
+    subject_e4: 'Mon Jul 6 PM',
+  };
 
   document.querySelectorAll('.change').forEach(row => {
     const cb = row.querySelector('input[type=checkbox]');
@@ -234,8 +301,17 @@
     if (checked(form, 'chg_band')) changes.push(`Band name: ${val(form, 'band_name')}`);
     else approved.push('Back 2 The Feature');
 
-    if (checked(form, 'chg_subjects')) changes.push(`Subjects: ${val(form, 'subjects')}`);
-    else approved.push('Subject lines E1–E4 option A');
+    const customSubjects = val(form, 'subjects_custom');
+    Object.keys(DEFAULT_SUBJECTS).forEach(key => {
+      const picked = val(form, key);
+      if (picked !== DEFAULT_SUBJECTS[key]) {
+        changes.push(`Subject ${SEND_LABELS[key]}: ${picked}`);
+      }
+    });
+    if (customSubjects) changes.push(`Custom subjects: ${customSubjects}`);
+    if (!Object.keys(DEFAULT_SUBJECTS).some(k => val(form, k) !== DEFAULT_SUBJECTS[k]) && !customSubjects) {
+      approved.push('Default subject lines (see summary box)');
+    }
 
     if (checked(form, 'chg_early_bird')) changes.push(`Early bird: ${val(form, 'early_bird')}`);
     else approved.push('Leave $10 early bird on Partiful');
